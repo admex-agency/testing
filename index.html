@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YEN Premium | Tổ Yến Cao Cấp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#F8F3EA;
+      --ivory:#FFFDF8;
+      --gold:#C9A35A;
+      --gold-2:#E7D3A1;
+      --brown:#4A3427;
+      --dark:#17120D;
+      --muted:#75695E;
+      --line:rgba(74,52,39,.13);
+      --shadow:0 24px 80px rgba(55,35,16,.13);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(180deg,var(--ivory),var(--cream));color:var(--dark)}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
+    header{position:sticky;top:0;z-index:30;background:rgba(255,253,248,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.18em;color:var(--brown)}
+    .brand-mark{width:38px;height:38px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#fff 0 16%,var(--gold-2) 17% 42%,var(--gold) 43% 100%);box-shadow:0 12px 30px rgba(201,163,90,.35)}
+    nav{display:flex;align-items:center;gap:28px;font-size:14px;color:var(--muted);font-weight:600}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;background:var(--dark);color:#fff;padding:13px 22px;font-size:14px;font-weight:700;box-shadow:0 14px 34px rgba(23,18,13,.18);transition:.25s ease}
+    .nav-cta:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(23,18,13,.24)}
+    .hero{position:relative;overflow:hidden;padding:72px 0 92px;background:radial-gradient(circle at 72% 30%,rgba(231,211,161,.55),transparent 33%),linear-gradient(135deg,#fffdf8 0%,#f6ecdc 55%,#efe0c6 100%)}
+    .hero:before{content:"";position:absolute;inset:0;background:url('data:image/svg+xml;utf8,<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="%23C9A35A" stroke-opacity=".16"><path d="M-80 680C170 520 235 695 430 520S765 170 1280 240"/><path d="M-90 560C180 420 290 545 500 390S820 60 1280 130"/><path d="M-100 760C210 620 300 790 530 600s395-330 750-270"/></g></svg>') center/cover no-repeat;pointer-events:none}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:9px 14px;border:1px solid rgba(201,163,90,.32);border-radius:999px;background:rgba(255,255,255,.56);color:var(--brown);font-size:13px;font-weight:700;letter-spacing:.04em}
+    .eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+    h1{font-family:"Playfair Display",serif;font-size:clamp(48px,7vw,92px);line-height:.95;margin:24px 0 22px;color:var(--brown);letter-spacing:-.04em}
+    .hero p{font-size:20px;line-height:1.65;color:#5f5145;margin:0 0 34px;max-width:650px}
+    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}.btn.secondary{background:rgba(255,255,255,.62);color:var(--brown);border:1px solid rgba(74,52,39,.14);box-shadow:none}
+    .hero-card{position:relative;min-height:620px;border-radius:44px;background:linear-gradient(160deg,rgba(255,255,255,.86),rgba(255,250,240,.54));box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.65);overflow:hidden;padding:36px}
+    .product-visual{height:100%;min-height:548px;border-radius:34px;background:radial-gradient(circle at 50% 18%,#fff 0 10%,transparent 11%),radial-gradient(circle at 48% 38%,#fff4d7 0 8%,transparent 9%),linear-gradient(160deg,#f5dfab,#fff7e7 43%,#d7b877);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .jar{width:260px;height:380px;border-radius:42px 42px 34px 34px;background:linear-gradient(90deg,rgba(255,255,255,.48),rgba(255,255,255,.14)),linear-gradient(180deg,#fffef9,#f3e4c8);box-shadow:inset 0 0 0 1px rgba(255,255,255,.7),0 35px 70px rgba(98,64,23,.25);position:relative}.jar:before{content:"";position:absolute;top:-55px;left:45px;right:45px;height:78px;border-radius:22px 22px 10px 10px;background:linear-gradient(180deg,#d8b669,#ab843c)}.jar:after{content:"YEN\A PREMIUM BIRD'S NEST";white-space:pre;position:absolute;inset:98px 38px auto;height:130px;border-radius:26px;background:rgba(255,253,248,.75);display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;letter-spacing:.16em;color:var(--brown);font-size:18px;line-height:1.55;border:1px solid rgba(201,163,90,.28)}
+    .section{padding:92px 0}.section-head{max-width:760px;margin-bottom:40px}.kicker{font-size:13px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}.section h2{font-family:"Playfair Display",serif;font-size:clamp(34px,4.2vw,58px);line-height:1.06;margin:0 0 16px;color:var(--brown);letter-spacing:-.035em}.section-desc{font-size:18px;line-height:1.65;color:var(--muted);margin:0}
+    .intro-card{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;background:rgba(255,255,255,.62);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:36px}.intro-visual{border-radius:24px;min-height:360px;background:radial-gradient(circle at 50% 35%,#fff 0 15%,transparent 16%),linear-gradient(145deg,#ead6a6,#fff9eb 44%,#cda967);position:relative;overflow:hidden}.intro-visual:after{content:"";position:absolute;inset:30px;border:1px solid rgba(255,255,255,.55);border-radius:22px}.intro-text{display:flex;flex-direction:column;justify-content:center}.intro-text p{font-size:18px;line-height:1.75;color:#5f5145;margin:0 0 18px}.proof{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}.proof div{padding:18px;border-radius:20px;background:#fff;border:1px solid var(--line)}.proof strong{display:block;font-size:24px;color:var(--brown);margin-bottom:6px}.proof span{font-size:13px;color:var(--muted);font-weight:600}
+    .reasons{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}.reason{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;min-height:230px;box-shadow:0 18px 50px rgba(55,35,16,.07)}.reason b{display:inline-flex;width:38px;height:38px;border-radius:50%;align-items:center;justify-content:center;background:var(--cream);color:var(--gold);margin-bottom:22px}.reason h3{margin:0 0 10px;color:var(--brown);font-size:18px}.reason p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product{background:#fff;border:1px solid var(--line);border-radius:30px;padding:18px;box-shadow:0 18px 54px rgba(55,35,16,.08);display:flex;flex-direction:column}.p-img{aspect-ratio:1/1;border-radius:22px;background:radial-gradient(circle at 50% 30%,#fff 0 13%,transparent 14%),linear-gradient(145deg,#f8e8c5,#fffaf1 45%,#d8b66e);display:flex;align-items:center;justify-content:center;overflow:hidden}.p-mini{width:34%;height:55%;border-radius:24px;background:linear-gradient(180deg,#fffef9,#f0dec0);box-shadow:0 25px 50px rgba(98,64,23,.2);position:relative}.p-mini:before{content:"";position:absolute;top:-24px;left:24%;right:24%;height:32px;border-radius:10px 10px 5px 5px;background:linear-gradient(180deg,#d8b669,#ab843c)}.product h3{font-size:18px;color:var(--brown);margin:18px 0 8px}.product p{font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 16px}.price{font-weight:800;color:var(--dark);margin-top:auto;margin-bottom:14px}.buy{width:100%;padding:13px 18px;border:0;border-radius:999px;background:var(--brown);color:#fff;font-weight:800;cursor:pointer;transition:.2s}.buy:hover{background:var(--dark);transform:translateY(-1px)}
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.faq,.policy-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px}.faq h3,.policy-card h3{margin:0 0 10px;color:var(--brown);font-size:18px}.faq p,.policy-card p{margin:0;color:var(--muted);line-height:1.65;font-size:15px}.policy{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.policy-card{min-height:230px}
+    footer{background:#17120D;color:#fff;padding:54px 0}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}.footer-brand{font-weight:800;letter-spacing:.18em}.footer-grid p{color:rgba(255,255,255,.68);line-height:1.65;margin:12px 0 0;max-width:520px}.footer-links{display:flex;gap:18px;color:rgba(255,255,255,.76);font-size:14px}
+    @media(max-width:1024px){nav{display:none}.hero-grid,.intro-card{grid-template-columns:1fr}.hero-card{min-height:520px}.reasons{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,1fr)}.policy{grid-template-columns:1fr}.faq-grid{grid-template-columns:1fr}}
+    @media(max-width:640px){.container{width:min(100% - 28px,1180px)}.nav{height:66px}.hero{padding:52px 0 66px}.hero p{font-size:17px}.hero-card{padding:18px;min-height:430px;border-radius:30px}.product-visual{min-height:390px}.jar{transform:scale(.78)}.section{padding:64px 0}.intro-card{padding:18px}.proof{grid-template-columns:1fr}.reasons,.products{grid-template-columns:1fr}.footer-grid{display:block}.footer-links{margin-top:22px;flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top"><span class="brand-mark"></span>YEN</a>
+      <nav>
+        <a href="#gioi-thieu">Giới thiệu</a>
+        <a href="#ly-do">Lý do chọn</a>
+        <a href="#san-pham">Sản phẩm</a>
+        <a href="#faq">FAQ</a>
+        <a href="#chinh-sach">Chính sách</a>
+      </nav>
+      <a class="nav-cta" href="#san-pham">Mua ngay</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Yến Premium tuyển chọn</span>
+          <h1>YEN — tinh tuyển từ nguồn yến chất lượng.</h1>
+          <p>YEN được định hướng như một thương hiệu yến cao cấp: nguồn gốc rõ ràng, quy trình làm sạch cẩn trọng, đóng gói tinh tế và phù hợp cho chăm sóc sức khỏe cá nhân, gia đình hoặc làm quà biếu trang trọng.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#san-pham">Khám phá sản phẩm</a>
+            <a class="btn secondary" href="#chinh-sach">Xem chính sách</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Hero banner slider demo">
+          <div class="product-visual"><div class="jar"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gioi-thieu">
+      <div class="container intro-card">
+        <div class="intro-visual"></div>
+        <div class="intro-text">
+          <div class="kicker">Giới thiệu</div>
+          <h2>Chuẩn premium từ sản phẩm đến trải nghiệm mua hàng.</h2>
+          <p>YEN tập trung vào dòng yến chất lượng cao, được chọn lọc kỹ trước khi đưa đến khách hàng. Tinh thần thương hiệu không đi theo lối bán hàng đại trà, mà đặt trọng tâm vào sự tin cậy, tính minh bạch và cảm giác an tâm trong từng lần sử dụng.</p>
+          <div class="proof">
+            <div><strong>01</strong><span>Nguồn yến chọn lọc</span></div>
+            <div><strong>02</strong><span>Đóng gói cao cấp</span></div>
+            <div><strong>03</strong><span>Tư vấn kỹ trước mua</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ly-do">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">5 lý do nên mua yến tại YEN</div>
+          <h2>Lựa chọn cho người cần một sản phẩm yến đáng tin và xứng tầm.</h2>
+          <p class="section-desc">Các lợi điểm bên dưới được thiết kế như thông điệp bán hàng chính trên website, có thể điều chỉnh theo chứng nhận và nguồn cung thực tế sau này.</p>
+        </div>
+        <div class="reasons">
+          <article class="reason"><b>1</b><h3>Nguồn yến chất lượng</h3><p>Ưu tiên nguồn yến chọn lọc, đồng nhất về cảm quan, độ sạch và tiêu chuẩn đầu vào.</p></article>
+          <article class="reason"><b>2</b><h3>Làm sạch cẩn trọng</h3><p>Quy trình xử lý hướng đến giữ cấu trúc sợi yến, hạn chế can thiệp không cần thiết.</p></article>
+          <article class="reason"><b>3</b><h3>Đóng gói premium</h3><p>Thiết kế bao bì tinh tế, phù hợp cho sử dụng cá nhân hoặc làm quà biếu.</p></article>
+          <article class="reason"><b>4</b><h3>Tư vấn đúng nhu cầu</h3><p>Gợi ý sản phẩm theo mục đích sử dụng: chăm sóc sức khỏe, biếu tặng hoặc dùng định kỳ.</p></article>
+          <article class="reason"><b>5</b><h3>Mua hàng an tâm</h3><p>Chính sách thanh toán, giao nhận và đổi trả rõ ràng trước khi khách hàng quyết định.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="san-pham">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Danh sách sản phẩm</div>
+          <h2>Bộ sưu tập YEN Premium.</h2>
+          <p class="section-desc">Mỗi hàng hiển thị 3 sản phẩm trên desktop và tự động tối ưu trên tablet, mobile. Hiện ảnh đang là demo để bạn thay bằng ảnh sản phẩm thật sau.</p>
+        </div>
+        <div class="products">
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Premium Original</h3><p>Tổ yến tinh tuyển cho nhu cầu sử dụng định kỳ.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Premium Gift Box</h3><p>Hộp quà cao cấp, phù hợp biếu tặng đối tác và gia đình.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Clean Nest 50g</h3><p>Yến làm sạch, đóng gói tiện lợi cho gia đình nhỏ.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Clean Nest 100g</h3><p>Dung lượng tối ưu cho sử dụng dài hơn trong tháng.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Refined Nest</h3><p>Sợi yến chọn lọc kỹ, định vị cho phân khúc premium.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Family Pack</h3><p>Gói sản phẩm dành cho gia đình sử dụng đều đặn.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Wellness Set</h3><p>Bộ chăm sóc sức khỏe tinh gọn, sang trọng.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Executive Gift</h3><p>Phiên bản quà tặng cao cấp cho khách hàng doanh nghiệp.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Premium Jar</h3><p>Đóng hũ trang nhã, dễ bảo quản và trưng bày.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Signature Box</h3><p>Dòng sản phẩm đại diện hình ảnh thương hiệu YEN.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Daily Care</h3><p>Lựa chọn dễ tiếp cận cho người mới bắt đầu dùng yến.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Premium Plus</h3><p>Phiên bản nâng cấp cho nhu cầu chăm sóc cao hơn.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Pure Selection</h3><p>Yến chọn lọc theo tiêu chuẩn cảm quan nghiêm ngặt.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Luxury Hamper</h3><p>Set quà sang trọng cho dịp lễ, Tết và sự kiện quan trọng.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+          <article class="product"><div class="p-img"><div class="p-mini"></div></div><h3>YEN Bespoke Order</h3><p>Đặt hàng theo nhu cầu riêng cho cá nhân hoặc doanh nghiệp.</p><div class="price">Liên hệ giá</div><button class="buy">Mua ngay</button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head"><div class="kicker">Câu hỏi thường gặp</div><h2>Thông tin cần biết trước khi mua.</h2></div>
+        <div class="faq-grid">
+          <div class="faq"><h3>YEN có phù hợp làm quà biếu không?</h3><p>Có. Dòng Gift Box, Executive Gift và Luxury Hamper được thiết kế cho nhu cầu biếu tặng trang trọng.</p></div>
+          <div class="faq"><h3>Sản phẩm có thể dùng định kỳ không?</h3><p>Khách hàng có thể chọn các dòng Daily Care, Family Pack hoặc Clean Nest theo nhu cầu sử dụng thường xuyên.</p></div>
+          <div class="faq"><h3>Ảnh sản phẩm trên web đã là ảnh thật chưa?</h3><p>Ở bản demo này, hình ảnh đang là mô phỏng để hoàn thiện giao diện trước. Có thể thay ảnh thật trong thư mục assets sau.</p></div>
+          <div class="faq"><h3>Làm sao đặt mua?</h3><p>Khách hàng bấm “Mua ngay” để liên hệ tư vấn. Website có thể tích hợp Zalo, hotline, form đặt hàng hoặc giỏ hàng ở giai đoạn sau.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="chinh-sach">
+      <div class="container">
+        <div class="section-head"><div class="kicker">Chính sách mua hàng</div><h2>Minh bạch để khách hàng an tâm.</h2></div>
+        <div class="policy">
+          <div class="policy-card"><h3>Chính sách mua hàng</h3><p>YEN tiếp nhận đơn hàng qua website, hotline hoặc kênh tư vấn trực tiếp. Đơn hàng được xác nhận lại về sản phẩm, số lượng, thông tin nhận hàng và thời gian giao dự kiến trước khi xử lý.</p></div>
+          <div class="policy-card"><h3>Chính sách thanh toán</h3><p>Khách hàng có thể thanh toán chuyển khoản hoặc thanh toán theo phương thức được xác nhận tại thời điểm đặt hàng. Với đơn quà tặng doanh nghiệp, YEN có thể hỗ trợ quy trình xác nhận riêng.</p></div>
+          <div class="policy-card"><h3>Chính sách đổi trả</h3><p>YEN hỗ trợ đổi trả khi sản phẩm phát sinh lỗi do vận chuyển, bao bì không còn nguyên vẹn khi nhận hàng hoặc giao sai sản phẩm đã xác nhận. Khách hàng cần phản hồi trong thời gian quy định sau khi nhận hàng.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><div class="footer-brand">YEN PREMIUM</div><p>Tổ yến cao cấp cho chăm sóc sức khỏe, biếu tặng và trải nghiệm sống tinh tế.</p></div>
+      <div class="footer-links"><a href="#san-pham">Sản phẩm</a><a href="#faq">FAQ</a><a href="#chinh-sach">Chính sách</a></div>
+    </div>
+  </footer>
+</body>
+</html>
